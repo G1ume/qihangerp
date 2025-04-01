@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.qihangerp.api.jd.mapper.OmsJdGoodsSkuMapper">
+
+    <resultMap id="BaseResultMap" type="cn.qihangerp.api.jd.domain.OmsJdGoodsSku">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="wareId" column="ware_id" jdbcType="BIGINT"/>
+            <result property="skuId" column="sku_id" jdbcType="BIGINT"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="jdPrice" column="jd_price" jdbcType="DECIMAL"/>
+            <result property="outerId" column="outer_id" jdbcType="VARCHAR"/>
+            <result property="barCode" column="bar_code" jdbcType="VARCHAR"/>
+            <result property="logo" column="logo" jdbcType="VARCHAR"/>
+            <result property="saleAttrs" column="sale_attrs" jdbcType="VARCHAR"/>
+            <result property="attrs" column="attrs" jdbcType="VARCHAR"/>
+            <result property="skuName" column="sku_name" jdbcType="VARCHAR"/>
+            <result property="stockNum" column="stock_num" jdbcType="INTEGER"/>
+            <result property="modified" column="modified" jdbcType="TIMESTAMP"/>
+            <result property="created" column="created" jdbcType="TIMESTAMP"/>
+            <result property="currencySpuId" column="currency_spu_id" jdbcType="VARCHAR"/>
+            <result property="shopId" column="shop_id" jdbcType="BIGINT"/>
+            <result property="erpGoodsId" column="erp_goods_id" jdbcType="BIGINT"/>
+            <result property="erpGoodsSkuId" column="erp_goods_sku_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,ware_id,sku_id,shop_id,
+        status,jd_price,outer_id,
+        bar_code,logo,sale_attrs,
+        attrs,sku_name,stock_num,
+        modified,created,currency_spu_id,
+        erp_goods_id,erp_goods_sku_id
+    </sql>
+
+    <resultMap type="cn.qihangerp.api.jd.domain.vo.ErpGoodsSpecVo" id="GoodsSpecResult">
+        <result property="id"    column="id"    />
+        <result property="goodsId"    column="goods_id"    />
+        <result property="supplierId"    column="supplier_id"    />
+        <result property="specNum"    column="spec_num"    />
+        <result property="colorValue"    column="color_value"    />
+        <result property="colorImage"    column="color_image"    />
+        <result property="sizeValue"    column="size_value"    />
+        <result property="styleValue"    column="style_value"    />
+    </resultMap>
+
+    <sql id="selectGoodsSpecVo">
+        select gs.id, goods_id, spec_num, color_value, color_image, size_value, style_value,g.supplier_id
+        from erp_goods_spec gs
+                 left join erp_goods g on g.id = gs.goods_id
+    </sql>
+
+    <select id="selectGoodsSpecBySpecNum" parameterType="String" resultMap="GoodsSpecResult">
+        <include refid="selectGoodsSpecVo"/>
+        where spec_num = #{specNum}
+    </select>
+    <resultMap type="Shop" id="ShopResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="ename"    column="ename"    />
+        <result property="company"    column="company"    />
+        <result property="platform"    column="platform"    />
+        <result property="sellerShopId"    column="seller_shop_id"    />
+        <result property="accessToken"    column="access_token"    />
+    </resultMap>
+    <sql id="selectShopVo">
+        select * from s_shop
+    </sql>
+    <select id="selectShopById" parameterType="Long" resultMap="ShopResult">
+        <include refid="selectShopVo"/>
+        where id = #{id}
+    </select>
+
+
+    <resultMap type="ShopSetting" id="ShopSettingResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="appKey"    column="app_key"    />
+        <result property="appSecret"    column="app_secret"    />
+        <result property="remark"    column="remark"    />
+        <result property="serverUrl"    column="server_url"    />
+        <result property="redirectUrl"    column="redirect_url"    />
+    </resultMap>
+    <sql id="selectShopSettingVo">
+        select * from  s_shop_platform
+    </sql>
+
+
+    <select id="selectShopSettingById" parameterType="Integer" resultMap="ShopSettingResult">
+        <include refid="selectShopSettingVo"/>
+        where id = #{id}
+    </select>
+
+
+    <update id="updateShopSessionByShopId" >
+        update s_shop sessionKey = #{sessionKey}
+        where id = #{shopId}
+    </update>
+
+
+</mapper>
