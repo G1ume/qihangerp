@@ -1,11 +1,29 @@
 <template>
   <div class="dashboard-editor-container">
 
+    <!-- 轮播图 -->
+    <el-row style="margin-bottom:32px;">
+      <el-carousel :interval="5000" arrow="always">
+        <el-carousel-item>
+          <img  :src="require('../assets/images/bg01.jpg')" alt="Image 1" style="width: 100%; height: auto;">
+        </el-carousel-item>
+        <el-carousel-item>
+          <img  :src="require('../assets/images/bg02.jpg')" alt="Image 1" style="width: 100%; height: auto;">
+        </el-carousel-item>
+        <el-carousel-item>
+          <img  :src="require('../assets/images/bg03.png')" alt="Image 1" style="width: 100%; height: auto;">
+        </el-carousel-item>
+      </el-carousel>
+    </el-row>
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
+
+
 
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData" />
     </el-row>
+
+
 
     <el-row :gutter="32">
       <el-col :xs="24" :sm="24" :lg="8">
@@ -81,13 +99,6 @@ export default {
 .dashboard-editor-container {
   padding: 32px;
   background-color: rgb(240, 242, 245);
-  background:
-    linear-gradient(to bottom, rgba(240, 242, 245, 0.3) 60%, rgb(240, 242, 245) 100%),
-    url("../assets/images/bg02.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
   position: relative;
 
   .chart-wrapper {
@@ -102,4 +113,12 @@ export default {
     padding: 8px;
   }
 }
+
+.el-carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #f0f0f0;
+}
+
 </style>

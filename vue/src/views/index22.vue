@@ -25,7 +25,7 @@
       </el-col>
     </el-row>
 
-    
+
   </div>
 </template>
 
@@ -95,4 +95,6 @@ export default {
     padding: 8px;
   }
 }
+
+
 </style>
