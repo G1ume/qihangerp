@@ -86,16 +86,6 @@ public class ScmPurchaseOrderController extends BaseController
     }
 
     /**
-     * 审批采购订单
-     */
-    @PreAuthorize("@ss.hasPermi('purchase:purchaseOrder:add')")
-    @Log(title = "采购订单", businessType =  BusinessType.INSERT)
-    @PostMapping
-    public AjaxResult check(@RequestBody ScmPurchaseOrder scmPurchaseOrder){
-        return toAjax();
-    }
-
-    /**
      * 修改采购订单
      */
     @PreAuthorize("@ss.hasPermi('purchase:purchaseOrder:edit')")

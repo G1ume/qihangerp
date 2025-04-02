@@ -81,6 +81,13 @@ export default {
 .dashboard-editor-container {
   padding: 32px;
   background-color: rgb(240, 242, 245);
+  background:
+    linear-gradient(to bottom, rgba(240, 242, 245, 0.3) 60%, rgb(240, 242, 245) 100%),
+    url("../assets/images/bg02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
   position: relative;
 
   .chart-wrapper {

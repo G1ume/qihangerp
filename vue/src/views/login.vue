@@ -109,7 +109,7 @@
     </div>
     <!--  底部  -->
     <div class="el-login-footer">
-      <span>Copyright © 2023-2024 qihangerp.cn All Rights Reserved.</span>
+<!--      <span>Copyright © 2023-2024 qihangerp.cn All Rights Reserved.</span>-->
     </div>
   </div>
 </template>
@@ -345,7 +345,11 @@ export default {
   height: 100%;
   width: 100%;
   // background-size: cover;
-  background-image: url("../assets/images/login-background.png");
+  background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0) 60%, #f5f5f5 100%),url("../assets/images/bg03.png");
+  background-size: 100% 100%, contain;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center 20%;
+  background-color: #f5f5f5;
   background-attachment: fixed;
   overflow: hidden;
   .layout{
