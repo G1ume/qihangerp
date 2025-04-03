@@ -26,6 +26,7 @@ spring:
       database: 0
       # 密码
       #    password: 123321
+      password: redis_DePreW
       # 连接超时时间
       timeout: 10s
       lettuce:
