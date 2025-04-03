@@ -3,7 +3,7 @@
     <div class="layout">
       <div class="bgLeft"></div>
       <div class="bgRight"></div>
-      <h3 class="title">药品ERP管理系统</h3>
+      <h3 class="title">采购ERP管理系统</h3>
       <h1> 制药精益求精“在您健康的道路上，我们一直相伴”</h1>
 
       <div class="login-form">

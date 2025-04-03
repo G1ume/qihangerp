@@ -29,7 +29,7 @@ public class ApiApplication  {
         // System.setProperty("spring.devtools.restart.enabled", "false");
         SpringApplication.run(ApiApplication.class, args);
 
-        log.info("药品ERP系统启动成功   \n" +
+        log.info("采购ERP管理系统启动成功   \n" +
                 "   ____   _____  _    _            _   _   _____  ______  _____   _____  \n" +
                 "   / __ \\ |_   _|| |  | |    /\\    | \\ | | / ____||  ____||  __ \\ |  __ \\ \n" +
                 "  | |  | |  | |  | |__| |   /  \\   |  \\| || |  __ | |__   | |__) || |__) |\n" +

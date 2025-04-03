@@ -10,7 +10,7 @@
 
     <name>qihangerp</name>
     <url>http://www.qihangerp.cn</url>
-    <description>药品ERP系统</description>
+    <description>采购ERP管理系统</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
