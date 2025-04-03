@@ -4,7 +4,7 @@
       <div class="bgLeft"></div>
       <div class="bgRight"></div>
       <h3 class="title">采购ERP管理系统</h3>
-      <h1> 制药精益求精“在您健康的道路上，我们一直相伴”</h1>
+
 
       <div class="login-form">
         <div class="zhuce"  v-if="n !==3">
@@ -111,6 +111,7 @@
     </div>
     <!--  底部  -->
     <div class="el-login-footer">
+      <h1> 制药精益求精“在您健康的道路上，我们一直相伴”</h1>
 <!--      <span>Copyright © 2023-2024 qihangerp.cn All Rights Reserved.</span>-->
     </div>
   </div>
